@@ -1,26 +1,7 @@
-.model tiny
-.code   
-ORG 0100h
-start:
+.data
+    oneChar db ?   ; Оголошення одного символьного байту для зберігання одного символу.
+    searchParam db 255 dup(?)   ; Оголошення масиву з 255 байтів для пошуку параметрів.
+    currentLine db 255 dup(?)   ; Оголошення масиву з 255 байтів для поточного рядка.
+count dw 0   ; Оголошення двобайтової змінної для лічильника.
 
-
-    mov ah, 02h
-    mov dl, '2'
-    int 21h
-    mov dl, 13
-    int 21h
-    mov dl, 10
-    int 21h
-    mov dl, '4'
-    int 21h
-    mov dl, 13
-    int 21h
-    mov dl, 10
-    int 21h
-
-    mov ax, 4C00h
-    int 21h
-
-
-end start
 
